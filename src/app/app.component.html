@@ -1,0 +1,32 @@
+
+<div style="text-align:center">
+ 
+  <h1>{{title}}</h1>
+  
+  <select name="Provincia" [(ngModel)]='provinciaselected' (ngModelChange)="onSelectedChange($event)"  id="sel1" name="sel1">
+    <option [value]="country" *ngFor="let country of provincias">{{country}}</option>
+  </select>
+
+  <select name="Periodo" [(ngModel)]='periodoselected' (ngModelChange)="onSelectedChange2($event)" id="sel2" name="sel2">
+    <option [value]="EachPeriodo" *ngFor="let EachPeriodo of periodo">{{EachPeriodo}}</option>
+  </select>
+ 
+  <button id='button' (click)="consultar()">Consultar temperatura</button>
+
+  <h3>Muestro solamente el detalle de la temperatura en el horario de las 03 AM para la fecha correspondiente</h3>
+  <p *ngIf='temp' >Fecha: {{fstr}} <br> Temperatura {{temp}} Celsius</p>
+  <p *ngIf='temp1' >Fecha: {{fstr1  }} <br> Temperatura : {{temp1}} Celsius</p>
+  <p *ngIf='temp2' >Fecha: {{fstr2}} <br> Temperatura : {{temp2}} Celsius</p>
+  <p *ngIf='temp3' >Fecha: {{fstr3}} <br> Temperatura : {{temp3}} Celsius</p>
+  <p *ngIf='temp4' >Fecha: {{fstr4}} <br> Temperatura : {{temp4}} Celsius</p>
+  <p *ngIf='temp5' >Fecha: {{fstr5}} <br> Temperatura : {{temp5}} Celsius</p>
+
+  <div *ngIf ='data'>
+    <h3>JSON COMPLETO</h3>
+    <p class="data">{{data | json}}</p>
+  </div>
+ 
+</div>
+
+
+
